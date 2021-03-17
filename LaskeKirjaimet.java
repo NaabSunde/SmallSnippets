@@ -78,7 +78,7 @@ public class LaskeKirjaimet {
      * Tulostaa kirjaimet ja niiden määrät.
      */
     public void tulosta() {
-
+        jarjesta();
         for (Kirjain kirjain : kirjaimet) {
 
             System.out.println(kirjain.toString());
@@ -100,7 +100,8 @@ public class LaskeKirjaimet {
             tiedLuettava = args[0];
 
         }
-        long StartTime = System.currentTimeMillis();
+
+        long startTime = System.currentTimeMillis();
         try (Scanner fi = new Scanner(new FileInputStream(new File(tiedLuettava)))) {
 
             while ( fi.hasNext() ) {
@@ -121,9 +122,8 @@ public class LaskeKirjaimet {
 
         }
         long endTime = System.currentTimeMillis();
-
         kirjainlaskuri.tulosta();
-        System.out.println("Kirjaimia " + kirjainlaskuri.kirjaintenMaara() + ", kesti " + (endTime - StartTime) + "ms");
+        System.out.println("Kirjaimia " + kirjainlaskuri.kirjaintenMaara() + ", kesti " + (endTime - startTime) + "ms");
 
     }
 
